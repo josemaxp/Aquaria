@@ -27,7 +27,7 @@ function hideTemperature(){
 
 function loadFishData(){
 
-  fetch("https://josemaxp.github.io/jsonapi/senderoscadiz.json")
+  fetch("../json/fish.json")
   .then(function (response){
     return response.json();
   })
