@@ -23,7 +23,7 @@ body{
     width: 50%;
 }
 
-.conditions{
+.conditions, .cardContainer{
     width: auto;
     border: 2px solid #B7E2F0 ;
     border-radius: 30px;
@@ -51,7 +51,7 @@ body{
     background-color: #FFFFFF;
 }
 
-.litros h2, .luminosidad h2, .wattsCalculation h2, .ph h2, .gh h2{
+.litros h2, .luminosidad h2, .wattsCalculation h2, .ph h2, .gh h2, .screenRight h2{
     font-size: clamp(10px,5vw, 20px);
     color: #00A7DC;
     background-color: #FFFFFF;
@@ -75,12 +75,16 @@ body{
     align-content: center;
 }
 
-.expand button, .video, .getData{
+.expand button, .video, .getData, .button{
     font-size: clamp(10px,5vw, 20px);
     color: #00A7DC;
     border: 2px solid #B7E2F0;
     border-radius: 30px;
     background-color: #FFFFFF;
+}
+
+.button{
+    width: inherit;
 }
 
 .aquariumType label, .temperatureType label, .plantedAquarium label{
@@ -112,7 +116,24 @@ body{
     display: none;
 }
 
+.swiper{
+    width: 90%;
+    height: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev{
+    color: red !important;
     
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #f9004d !important;
+}
+
+.swiper-button-next:hover, .swiper-pagination:hover, .swiper-button-prev:hover{
+    color: #f9004d !important;
+}
+
 
 @media only screen and (max-width: 1250px){
     .plantedAquarium, .temperatureType, .aquariumType, .gh, .ph, .luminosidad, .litros{

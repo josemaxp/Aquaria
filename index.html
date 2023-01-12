@@ -13,12 +13,10 @@
     integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    
-    <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="title mt-5 d-flex justify-content-center align-items-center">
-        <img class="logo" src="images/logoAquaria.png" alt="logo" />
+    <div class="title d-flex justify-content-center align-items-center">
+        <img class="logo mt-5" src="images/logoAquaria.png" alt="logo" />
     </div>
     <div class="conditions m-5">
         <div class="bg-white m-2 d-flex flex-row">
@@ -103,22 +101,72 @@
                     </div>
                 </div>
             </div>
-            <div class="screenRight bg-white d-flex justify-content-center align-items-center">
+            <div class="screenRight bg-white d-flex flex-column justify-content-center align-items-center">
+                <h2>Vídeo recomendado</h2>
                 <iframe class="video bg-white" width="560" height="315" src="https://www.youtube.com/embed/sQBc85gg7HU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
         <div class="bg-white m-3 d-flex justify-content-center align-items-center">
             <button type="button" class="getData btn btn-info">Obtener datos</button>
         </div>
+
+        <div class="panel-group m-5 bg-white" id="accordion">
+            <div class="mb-3 panel bg-white">
+                <div class="bg-white d-flex justify-content-sm-around" id="headingOne">
+                    <h5 class="bg-white">
+                        <button class="button btn d-flex align-items-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="loadFishData()">
+                            Plantas <i class="fa fa-leaf bg-white m-1 " aria-hidden="true"></i>
+                        </button>
+                    </h5>
+                    <h5 class="bg-white">
+                        <button class="button btn collapsed d-flex align-items-center" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Peces<i class='fas fa-fish bg-white m-1'></i>
+                        </button>
+                    </h5>
+                    <h5 class="bg-white">
+                        <button class="button btn collapsed d-flex align-items-center" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Consejos <i class="fa fa-lightbulb bg-white m-1 "></i>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse m-3 bg-white" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body bg-white">
+                        
+                            <div class="swiper mySwiper box">
+                                <div class="swiper-wrapper" id="info">
+                                  <div class="swiper-slide card"> <i class="fas fa-graduation-cap"></i>
+                                    <h5>Final Project</h5>
+                                    <div class="pra">
+                                      <p class="cvtext">Application to compare prices of different products through offers uploaded by the users. It has a desktop application made with Java and JavaFX, a Java server with a database managed by Hibernate and an-android Java application.</p>                                      
+                                    </div>
+                                  </div>                                  
+                              </div>
+                            </div>
+
+                    </div>
+                </div>
+
+                <div id="collapseTwo" class="collapse m-3 bg-white" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body bg-white">
+                    Bbbbbbbbbbbbbbbbbbb
+                    </div>
+                </div>
+
+                <div id="collapseThree" class="collapse m-3 bg-white" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body bg-white">
+                    ccccccccccccc
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    
 </body>
 </html>
