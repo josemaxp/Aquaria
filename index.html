@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Acuarium builder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Josefin%20Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="title mt-5 d-flex justify-content-center align-items-center">
+        <img class="logo" src="images/logoAquaria.png" alt="logo" />
+    </div>
+    <div class="conditions m-5">
+        <div class="bg-white m-2 d-flex flex-row">
+            <div class="screenLeft bg-white">
+                <div class="litros m-4 align-items-baseline">
+                    <h4>Litros del acuario:</h4>
+                    <div class="litersInput align-items-baseline">
+                        <input name="litros" class="pl-2 ml-3 border-info" id="litros" type="number">
+                        <h2 class="ml-1">l</h2>
+                    </div>
+                </div>
+
+                <div class="luminosidad m-4 align-items-baseline">
+                    <h4>Luminosidad:</h4>
+                    <div class="luminosityInput align-items-baseline">
+                        <input class="pl-2 ml-3 border-info" name="luminosidad" id="luminosidad" type="number" step=".01">
+                        <h2 class="ml-1">lm/l</h2>
+                        <div class="calculate">
+                            <button type="button" class="collapsible btn ml-3" data-toggle="collapse" data-target="#expand">
+                                <i class="fa-solid fa-calculator"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="expand collapse m-4 p-3" id="expand">
+                    <div class="wattsCalculation align-items-baseline">
+                        <h4>Vatios de tu lámpara:</h4> 
+                        <div class="wattsCalculationInput align-items-baseline mb-2">
+                            <input class="pl-2 ml-3 border-info bg-white" name="watts" id="watts" type="number" step=".01">
+                            <h2 class="ml-1 bg-white">W</h2>
+                        </div>
+                        <button type="button" class="calculate btn btn-info ml-3" onclick="calculateLuminosity()">Calcular</button>
+                    </div>
+
+                    <p class="bg-white m-3">Nota: La fórmula utilizada es lm/l = (Vatios * 70)/l. Ésta es una fórmula genérica que da un valor aproximado pero que no refleja la realidad al 100%. Los lm/l dependen de muchos más factores que aquí no se recogen.</p>
+                </div>
+                <div class="ph m-4 align-items-baseline">
+                    <h4>pH del agua:</h4>
+                    <div class="phInput align-items-baseline">
+                        <input name="ph" class="ml-3 pl-2 border-info" id="litros" type="number" step=".1" min=0 max=14>
+                        <h2 class="ml-1">pH</h2>
+                    </div>
+                </div>
+                <div class="gh m-4 align-items-baseline">
+                    <h4>Dureza del agua:</h4>
+                    <div class="ghInput align-items-baseline">
+                        <input name="gh" class="ml-3 pl-2 border-info" id="gh" type="number" step=".1" min=0 max=30>
+                        <h2 class="ml-1">dH</h2>
+                    </div>
+                </div>
+                <div class="aquariumType m-4 align-items-baseline">
+                    <h4>Tipo de acuario:</h4>
+                    <div class="btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons">
+                        <label class="btn btn-info" onclick="showTemperature()">
+                            <input type="radio" name="waterType" id="dulce" value="dulce">Agua dulce
+                        </label>
+                        <label class="btn btn-info" onclick="hideTemperature()">
+                            <input type="radio" name="waterType" id="salado" value="salado">Agua salada
+                        </label>
+                    </div>
+                </div>
+                <div class="temperatureType m-4 align-items-baseline" id="temperature">
+                    <h4>Temperatura del agua:</h4>
+                    <div class="btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons">
+                        <label class="btn btn-info" id="cold1">
+                            <input type="radio" name="temperature" id="cold" value="fria" >Agua fría
+                        </label>
+                        <label class="btn btn-info">
+                            <input type="radio" name="temperature" id="hot" value="caliente">Agua caliente
+                        </label>
+                    </div>
+                </div>
+                <div class="plantedAquarium m-4 align-items-baseline">
+                    <h4>¿Es un acuario plantado o con corales?</h4>
+                    <div class="btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons">
+                        <label class="btn btn-info">
+                            <input type="radio" name="planted" id="si" value="si">Sí
+                        </label>
+                        <label class="btn btn-info">
+                            <input type="radio" name="planted" id="no" value="no">No
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="screenRight bg-white d-flex justify-content-center align-items-center">
+                <iframe class="video bg-white" width="560" height="315" src="https://www.youtube.com/embed/sQBc85gg7HU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="bg-white m-3 d-flex justify-content-center align-items-center">
+            <button type="button" class="getData btn btn-info">Obtener datos</button>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+</body>
+</html>

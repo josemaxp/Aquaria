@@ -1,0 +1,133 @@
+*{
+	font-family: 'Josefin Sans', sans-serif;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	word-break: break-word;
+    background-color: #EBFAFF;
+}
+
+body{
+    background-color: #EBFAFF;
+}
+
+.logo{
+    width: 280px;
+    height: 48px;
+}
+
+.temperatureType{
+    display: none;
+}
+
+.screenRight, .screenLeft{
+    width: 50%;
+}
+
+.conditions{
+    width: auto;
+    border: 2px solid #B7E2F0 ;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
+
+.litros, .luminosidad, .wattsCalculationInput, .luminosityInput, .litersInput, .ph, .phInput, .gh, .ghInput, .aquariumType, .temperatureType, .plantedAquarium{
+    width: fit-content;
+    height: fit-content;   
+    display: flex;
+    flex-direction:row;
+    background-color: #FFFFFF;
+} 
+
+.litros h4, .luminosidad h4, .wattsCalculation h4, .ph h4, .gh h4, .aquariumType h4, .temperatureType h4, .plantedAquarium h4{
+    font-size: clamp(15px,5vw, 25px);
+    color: #00A7DC;
+    background-color: #FFFFFF;
+}
+
+.litros input, .luminosidad input, .wattsCalculation input, .ph input, .gh input{
+    border: 2px solid #B7E2F0;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
+.litros h2, .luminosidad h2, .wattsCalculation h2, .ph h2, .gh h2{
+    font-size: clamp(10px,5vw, 20px);
+    color: #00A7DC;
+    background-color: #FFFFFF;
+}
+
+.calculate{
+    background-color: #FFFFFF;
+}
+
+.luminosidad button{
+    border: 2px solid #B7E2F0;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
+.expand {
+    width: fit-content;
+    background-color: #FFFFFF;
+    border: 2px solid #B7E2F0;
+    border-radius: 30px;
+    align-content: center;
+}
+
+.expand button, .video, .getData{
+    font-size: clamp(10px,5vw, 20px);
+    color: #00A7DC;
+    border: 2px solid #B7E2F0;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
+.aquariumType label, .temperatureType label, .plantedAquarium label{
+    font-size: clamp(10px,5vw, 20px);
+    color: #00A7DC;
+    border: 2px solid #B7E2F0;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
+.wattsCalculation{
+    width: fit-content;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction:row;
+}
+
+.wattsCalculation input{
+    background-color: #FFFFFF;
+}
+
+
+.calculate{
+    display: inherit;
+    align-content: center;
+}
+
+.temperatureType{
+    display: none;
+}
+
+    
+
+@media only screen and (max-width: 1250px){
+    .plantedAquarium, .temperatureType, .aquariumType, .gh, .ph, .luminosidad, .litros{
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (max-width: 850px){
+    .wattsCalculation{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
