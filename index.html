@@ -24,7 +24,7 @@
                 <div class="litros m-4 align-items-baseline">
                     <h4>Litros del acuario:</h4>
                     <div class="litersInput align-items-baseline">
-                        <input name="litros" class="pl-2 ml-3 border-info" id="litros" type="number">
+                        <input name="litros" class="pl-2 ml-3" id="liters" type="number" min=0>
                         <h2 class="ml-1">l</h2>
                     </div>
                 </div>
@@ -32,13 +32,24 @@
                 <div class="luminosidad m-4 align-items-baseline">
                     <h4>Luminosidad:</h4>
                     <div class="luminosityInput align-items-baseline">
-                        <input class="pl-2 ml-3 border-info" name="luminosidad" id="luminosidad" type="number" step=".01">
+                        <input class="pl-2 ml-3" name="luminosidad" id="luminosity" type="number" step=".01" min=0>
                         <h2 class="ml-1">lm/l</h2>
                         <div class="calculate">
                             <button type="button" class="collapsible btn ml-3" data-toggle="collapse" data-target="#expand">
                                 <i class="fa-solid fa-calculator"></i>
                             </button>
                         </div>
+                    </div>
+                </div>
+                <div class="plantedAquarium m-4 align-items-baseline">
+                    <h4>Tipo de bombilla: </h4>
+                    <div class="bulbTypeContainer btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons" id="bulbTypeContainer">
+                        <label class="btn btn-info">
+                            <input type="radio" name="bulb" id="fluorescente" value="luzFluorescente">Fluorescente
+                        </label>
+                        <label class="btn btn-info">
+                            <input type="radio" name="bulb" id="led" value="luzLED">LED
+                        </label>
                     </div>
                 </div>
                 <div class="expand collapse m-4 p-3" id="expand">
@@ -69,18 +80,18 @@
                 </div>
                 <div class="aquariumType m-4 align-items-baseline">
                     <h4>Tipo de acuario:</h4>
-                    <div class="btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons">
+                    <div class="waterTypeContainer btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons" id="waterTypeContainer">
                         <label class="btn btn-info" onclick="showTemperature()">
                             <input type="radio" name="waterType" id="dulce" value="dulce">Agua dulce
                         </label>
                         <label class="btn btn-info" onclick="hideTemperature()">
-                            <input type="radio" name="waterType" id="salado" value="salado">Agua salada
+                            <input type="radio" name="waterType" id="salado" value="salada">Agua salada
                         </label>
                     </div>
                 </div>
                 <div class="temperatureType m-4 align-items-baseline" id="temperature">
                     <h4>Temperatura del agua:</h4>
-                    <div class="btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons">
+                    <div class="temperatureContainer btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons" id="temperatureContainer">
                         <label class="btn btn-info" id="cold1">
                             <input type="radio" name="temperature" id="cold" value="fria" >Agua fría
                         </label>
@@ -91,7 +102,7 @@
                 </div>
                 <div class="plantedAquarium m-4 align-items-baseline">
                     <h4>¿Es un acuario plantado o con corales?</h4>
-                    <div class="btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons">
+                    <div class="plantedContainer btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons" id="plantedContainer">
                         <label class="btn btn-info">
                             <input type="radio" name="planted" id="si" value="si">Sí
                         </label>
@@ -111,7 +122,7 @@
             <div class="mb-3 panel bg-white">
                 <div class="bg-white d-flex justify-content-sm-around" id="headingOne">
                     <h5 class="bg-white">
-                        <button class="button btn d-flex align-items-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="loadFishData()">
+                        <button class="button btn d-flex align-items-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="loadPlantData()">
                             Plantas <i class="fa fa-leaf bg-white m-1 " aria-hidden="true"></i>
                         </button>
                     </h5>
@@ -128,8 +139,7 @@
                 </div>
 
                 <div id="collapseOne" class="collapse m-0 bg-white" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body bg-white">
-                        
+                    <div class="card-body bg-white">                        
                             <div class="swiper mySwiper box bg-white">
                                 <div class="swiper-wrapper  bg-white" id="info">
                                   <div class="swiperContainer swiper-slide card m-2">
@@ -147,7 +157,6 @@
                                   </div>                                  
                               </div>
                             </div>
-
                     </div>
                 </div>
 

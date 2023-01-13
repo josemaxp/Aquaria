@@ -1,7 +1,7 @@
 {
   "records": [
     {
-      "id": 1,
+      "id": ,
       "nombreComun": "",
       "nombreCientifico": "",
       "litrosAcuario": "",
@@ -9,17 +9,17 @@
       "ph": "",
       "gh": "",
       "dieta": "",
-      "longitud": "",
       "descripcion": "",
+      "longitud": "",
       "temperamento": "",
       "distribucionYHabitat": "",
+      "reproduccion": "",
       "consejos": "",
       "compatibilidad": "",
       "problemas": "",
       "imagen": ""
-    },
-    {
-      "id": 1,
+    },{
+      "id": ,
       "nombreComun": "",
       "nombreCientifico": "",
       "litrosAcuario": "",
@@ -27,17 +27,17 @@
       "ph": "",
       "gh": "",
       "dieta": "",
-      "longitud": "",
       "descripcion": "",
+      "longitud": "",
       "temperamento": "",
       "distribucionYHabitat": "",
+      "reproduccion": "",
       "consejos": "",
       "compatibilidad": "",
       "problemas": "",
       "imagen": ""
-    },
-    {
-      "id": 1,
+    },{
+      "id": ,
       "nombreComun": "",
       "nombreCientifico": "",
       "litrosAcuario": "",
@@ -45,17 +45,17 @@
       "ph": "",
       "gh": "",
       "dieta": "",
-      "longitud": "",
       "descripcion": "",
+      "longitud": "",
       "temperamento": "",
       "distribucionYHabitat": "",
+      "reproduccion": "",
       "consejos": "",
       "compatibilidad": "",
       "problemas": "",
       "imagen": ""
-    },
-    {
-      "id": 1,
+    },{
+      "id": ,
       "nombreComun": "",
       "nombreCientifico": "",
       "litrosAcuario": "",
@@ -63,17 +63,17 @@
       "ph": "",
       "gh": "",
       "dieta": "",
-      "longitud": "",
       "descripcion": "",
+      "longitud": "",
       "temperamento": "",
       "distribucionYHabitat": "",
+      "reproduccion": "",
       "consejos": "",
       "compatibilidad": "",
       "problemas": "",
       "imagen": ""
-    },
-    {
-      "id": 1,
+    },{
+      "id": ,
       "nombreComun": "",
       "nombreCientifico": "",
       "litrosAcuario": "",
@@ -81,17 +81,17 @@
       "ph": "",
       "gh": "",
       "dieta": "",
-      "longitud": "",
       "descripcion": "",
+      "longitud": "",
       "temperamento": "",
       "distribucionYHabitat": "",
+      "reproduccion": "",
       "consejos": "",
       "compatibilidad": "",
       "problemas": "",
       "imagen": ""
-    },
-    {
-      "id": 1,
+    },{
+      "id": ,
       "nombreComun": "",
       "nombreCientifico": "",
       "litrosAcuario": "",
@@ -99,17 +99,17 @@
       "ph": "",
       "gh": "",
       "dieta": "",
-      "longitud": "",
       "descripcion": "",
+      "longitud": "",
       "temperamento": "",
       "distribucionYHabitat": "",
+      "reproduccion": "",
       "consejos": "",
       "compatibilidad": "",
       "problemas": "",
       "imagen": ""
-    },
-    {
-      "id": 1,
+    },{
+      "id": ,
       "nombreComun": "",
       "nombreCientifico": "",
       "litrosAcuario": "",
@@ -117,32 +117,16 @@
       "ph": "",
       "gh": "",
       "dieta": "",
-      "longitud": "",
       "descripcion": "",
+      "longitud": "",
       "temperamento": "",
       "distribucionYHabitat": "",
-      "consejos": "",
-      "compatibilidad": "",
-      "problemas": "",
-      "imagen": ""
-    },
-    {
-      "id": 1,
-      "nombreComun": "",
-      "nombreCientifico": "",
-      "litrosAcuario": "",
-      "temperatura": "",
-      "ph": "",
-      "gh": "",
-      "dieta": "",
-      "longitud": "",
-      "descripcion": "",
-      "temperamento": "",
-      "distribucionYHabitat": "",
+      "reproduccion": "",
       "consejos": "",
       "compatibilidad": "",
       "problemas": "",
       "imagen": ""
     }
+    
   ]
 }

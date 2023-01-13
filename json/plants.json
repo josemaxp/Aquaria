@@ -1,0 +1,48 @@
+{
+  "records": [
+    {
+      "id": 1,
+      "nombreComun": "Ambulia",
+      "nombreCientifico": "Limnophila sessiliflora",
+      "luzLED": "27",
+      "luzFluorescente": "50",
+      "temperatura": "22-28",
+      "ph": "6.0-8.5",
+      "gh": "4-12",
+      "sustrato": "Grava fina.",
+      "tipoAgua": "dulce",
+      "zonaAcuario": "Parte media o trasera",
+      "dificultad": "Baja",
+      "distribucionYHabitat": "Procede del sudeste asiático donde puede ser considerada como una plaga por su capacidad de reproducción. Es capaz de desarrollarse en diferentes ambientes, su capacidad para tolerar diferentes cambios químicos del agua la hacen una planta invasiva que puede vivir en lagos, arroyos y aguas estancadas.",
+      "forma": "Planta frondosa y de color verde intenso. Tiene un tallo principal que se divide en diferentes ramas.",
+      "tamaño": "Puede llegar a medir unos 40 o 50 centímetros de altura, pudiendo crecer a una velocidad de 5 centímetros por semana.",
+      "reproduccion": "Se reproduce con facilidad a través de esquejes. Sacar un esqueje cortando unos diez centímetros de la parte superior de la planta, retirr las hojas que queden en la parte inferior para no enterrarlas y meter con una pinza el esqueje en el sustrato. Separar los nuevos esquejes de la planta originaria para que no se peguen en exceso.",
+      "consejos": "Las Limnophila prefieren el agua blanda y ácida. Su mejor rango de temperatura oscila los 24-27ºC. Si la iluminación es más intensa, el crecimiento es más denso y apretado, mientras que con una iluminación menos intensa, crece de forma más alargada, con un color menos vivo y menos densa. La grava fina facilita su enraizamiento. El fondo se puede acompañar con arcilla y ser rico en nutrientes minerales para evitar que se tenga que abonar de forma frecuente, sino se pueden abonar con productos ricos en sales minerales.",
+      "compatibilidad": "Se recomienda utilizar en un acuario con Guppys y Platys.",
+      "problemas": "No es conveniente utilizarla en un acuario con peces herbívoros porque en su crecimiento es una planta frágil que se puede romper con facilidad.",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Limnophila_sessiliflora.jpg/330px-Limnophila_sessiliflora.jpg"
+    },
+    {
+      "id": 2,
+      "nombreComun": "",
+      "nombreCientifico": "",
+      "luzLED": "",
+      "luzFluorescente": "",
+      "temperatura": "",
+      "ph": "",
+      "gh": "",
+      "sustrato": "",
+      "zonaAcuario": "",
+      "dificultad": "",
+      "distribucionYHabitat": "",
+      "forma": "",
+      "tamaño": "",
+      "reproduccion": "",
+      "consejos": "",
+      "compatibilidad": "",
+      "problemas": "",
+      "imagen": ""
+    }
+    
+  ]
+}

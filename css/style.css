@@ -83,6 +83,12 @@ body{
     background-color: #FFFFFF;
 }
 
+.bulbTypeContainer, .waterTypeContainer, .temperatureContainer, .plantedContainer{
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
 .button{
     width: inherit;
 }
