@@ -1,10 +1,10 @@
 function calculateLuminosity(){
-  var liters = document.getElementById("litros").value;
+  var liters = document.getElementById("liters").value;
   var watts = document.getElementById("watts").value;
 
   var total = (watts * 70)/liters; 
 
-  document.getElementById("luminosidad").value=total;
+  document.getElementById("luminosity").value=total;
 }
 
 function showTemperature(){
@@ -120,32 +120,28 @@ function checkFields(){
 
 function loadPlantData(){
   document.getElementById("info").innerHTML = '';
+
+  var checkHotWaterPlants = false;
     
   if(this.checkFields()){
     var dataInput = this.getInputData();
 
-    var liters = dataInput[0];
-    var luminosity = dataInput[1];
+    var liters = dataInput[0].value;
+    var luminosity = dataInput[1].value;
     var bulbType = dataInput[2];
     var waterType = dataInput[3];
     var temperature = dataInput[4];
     var planted = dataInput[5];
 
-    var checkHotWaterPlants = false;
-
     for(var i = 0; i < plants.records.length; i++){
       var plantLuminosity = null;
       var plantTemperature = plants.records[i].temperatura.split("-");
-
 
       if(bulbType == "luzLED"){
         plantLuminosity = plants.records[i].luzLED;
       }else{
         plantLuminosity = plants.records[i].luzFluorescente;
       }
-
-      console.log(plantLuminosity+", "+luminosity.value)
-
 
       if(waterType == "salada"){
 
@@ -157,7 +153,7 @@ function loadPlantData(){
         document.getElementById("info").innerHTML += "<p class='bg-white' style='color:red;''>Los datos de las plantas de agua fría aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
         break;
 
-      }else if(luminosity.value >= plantLuminosity  && waterType.value == plants.records[i].tipoAgua && plantTemperature[0] > 10){
+      }else if(parseFloat(luminosity) >= parseFloat(plantLuminosity) && parseFloat(plantTemperature[0]) > 10){
         checkHotWaterPlants = true;
 
         document.getElementById("info").innerHTML += 
@@ -177,11 +173,12 @@ function loadPlantData(){
 
       }
     }
+
   }else{
     document.getElementById("info").innerHTML += "<p class='bg-white' style='color:red;''>Por favor, rellene correctamente todos los campos marcados en rojo.</p>";
   }
 
-  if (!checkHotWaterPlants && temperature == "caliente" && waterType.value != "salada"){
+  if (!checkHotWaterPlants && temperature == "caliente" && waterType != "salada"){
     document.getElementById("info").innerHTML += "<p class='bg-white' style='color:red;''>No existen plantas que cumplan estas condiciones.</p>";
   }
 }
