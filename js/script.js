@@ -31,8 +31,23 @@ function loadFishData(){
 
 
   for(var i = 0; i<data.records.length; i++){
-    document.getElementById("info").innerHTML += "<div class='swiper-slide card'><h5>"+data.records[i].NOMBRE+"</h5>"+
-    "<div class='pra'><p class='cvtext' >"+data.records[i].NOMBRE+"</p></div></div>";
+
+    document.getElementById("info").innerHTML += "<div class='swiperContainer swiper-slide card m-2'>"+
+                                    "<div class='swiperTop d-flex my-3 mx-1'>"+
+                                        "<div class='swiperTitle d-flex justify-content-center align-items-center bg-white'>"+
+                                            "<h5 class='bg-white'>"+data.records[i].NOMBRE+"</h5>"+
+                                        "</div>"+
+                                        "<div class='swiperIcon bg-white'>"+
+                                            "<i class='fa fa-eye bg-white' aria-hidden='true'></i>"+
+                                        "</div>"+
+                                    "</div>"+
+                                    "<div class='swiperImgContainer d-flex justify-content-center align-items-center bg-white'>"+
+                                        "<img class='swiperImg' src="+data.records[i].IMAGEN+"/>"+                                 
+                                    "</div>"+
+                                  "</div>";
+
+    /*document.getElementById("info").innerHTML += "<div class='swiper-slide card'><h5>"+data.records[i].NOMBRE+"</h5>"+
+    "<div class='pra'><p class='cvtext' >"+data.records[i].NOMBRE+"</p></div></div>";*/
   }
   
 }

@@ -75,7 +75,7 @@ body{
     align-content: center;
 }
 
-.expand button, .video, .getData, .button{
+.expand button, .video, .getData, .button, .swiperContainer{
     font-size: clamp(10px,5vw, 20px);
     color: #00A7DC;
     border: 2px solid #B7E2F0;
@@ -117,21 +117,24 @@ body{
 }
 
 .swiper{
-    width: 90%;
+    width: 100%;
     height: 100%;
 }
 
-.swiper-button-next, .swiper-button-prev{
-    color: red !important;
-    
+.swiperTitle{
+    width: 90%;
 }
 
-.swiper-pagination-bullet-active {
-    background-color: #f9004d !important;
+.swiperIcon{
+    width: 10%;
 }
 
-.swiper-button-next:hover, .swiper-pagination:hover, .swiper-button-prev:hover{
-    color: #f9004d !important;
+.swiperImg{
+    width: 100%;
+    height: 100%;   
+    object-fit: fill;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 
