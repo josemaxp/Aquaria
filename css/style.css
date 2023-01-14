@@ -75,7 +75,7 @@ body{
     align-content: center;
 }
 
-.expand button, .video, .getData, .button, .swiperContainer{
+.expand button, .video, .getData, .button, .swiperContainer, .buttonShowAll{
     font-size: clamp(10px,5vw, 20px);
     color: #00A7DC;
     border: 2px solid #B7E2F0;
