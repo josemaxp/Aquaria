@@ -144,6 +144,11 @@ function checkFields(){
 function loadPlantData(){
   document.getElementById("info").innerHTML = '';
 
+  //Hace que, al darle al botón de plantas, se vuelva a mostrar. Es decir, nunca se contrae a no ser que se le de a otro botón.
+  $('#collapseOne').on('hidden.bs.collapse', function () {
+    $('#collapseOne').collapse('show');
+  })
+
   var checkHotWaterPlants = false;
     
   if(this.checkFields()){
@@ -166,22 +171,21 @@ function loadPlantData(){
         plantLuminosity = plants.records[i].luzFluorescente;
       }
 
-      if(waterType == "salada"){
-
-        document.getElementById("info").innerHTML += "<p class='bg-white m-3' style='color:red;''>Los datos de los corales aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
+      if(planted == "no"){
+      
+        document.getElementById("info").innerHTML += "<p class='bg-white m-3' style='color:red;''>No se muestra ninguna planta o coral puesto que tu acuario no será plantado.</p>";
         break;
-
-      }else if(temperature == "fria"){
+      } else if(temperature == "fria"){
 
         document.getElementById("info").innerHTML += "<p class='bg-white m-3' style='color:red;''>Los datos de las plantas de agua fría aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
         break;
 
-      }else if(planted == "no"){
-      
-        document.getElementById("info").innerHTML += "<p class='bg-white m-3' style='color:red;''>No se muestra ninguna planta o coral puesto que tu acuario no será plantado.</p>";
+      }else if(waterType == "salada"){
+
+        document.getElementById("info").innerHTML += "<p class='bg-white m-3' style='color:red;''>Los datos de los corales aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
         break;
 
-      }else if(temperature == "caliente" && parseFloat(luminosity) >= parseFloat(plantLuminosity) && parseFloat(plantTemperature[0]) > 10){
+      } else if(temperature == "caliente" && parseFloat(luminosity) >= parseFloat(plantLuminosity) && parseFloat(plantTemperature[0]) > 10){
         checkHotWaterPlants = true;
 
         document.getElementById("info").innerHTML += 
