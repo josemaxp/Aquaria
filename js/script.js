@@ -293,9 +293,16 @@ function loadModelInfo(id){
 
 
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetweenSlides: 30,
-  slidesPerGroup: 3,
+  slidesPerView: 1,
+  spaceBetweenSlides: 10,
+  slidesPerGroup: 1,
+  breakpoints: {
+    800: {
+      slidesPerView: 3,
+      spaceBetweenSlides: 30,
+      slidesPerGroup: 3,
+    },
+  },
   loop: false,
   loopFillGroupWithBlank: false,
 });

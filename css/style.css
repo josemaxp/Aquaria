@@ -23,6 +23,11 @@ body{
     width: 50%;
 }
 
+.screenRight {
+    justify-content: center;
+    align-items: center;
+}
+
 .conditions, .cardContainer{
     width: auto;
     border: 2px solid #B7E2F0 ;
@@ -40,9 +45,13 @@ body{
 } 
 
 .litros h4, .luminosidad h4, .wattsCalculation h4, .ph h4, .gh h4, .aquariumType h4, .temperatureType h4, .plantedAquarium h4, h4{
-    font-size: clamp(15px,5vw, 25px);
+    font-size: clamp(15px,3vw, 25px);
     color: #00A7DC;
     background-color: #FFFFFF;
+}
+
+.wattsCalculation h4{
+    font-size: clamp(10px,3vw, 20px);
 }
 
 .litros input, .luminosidad input, .wattsCalculation input, .ph input, .gh input{
@@ -52,7 +61,7 @@ body{
 }
 
 .litros h2, .luminosidad h2, .wattsCalculation h2, .ph h2, .gh h2, .screenRight h2{
-    font-size: clamp(10px,5vw, 20px);
+    font-size: clamp(10px,3vw, 20px);
     color: #00A7DC;
     background-color: #FFFFFF;
 }
@@ -76,7 +85,7 @@ body{
 }
 
 .expand button, .video, .getData, .button, .swiperContainer, .buttonShowAll{
-    font-size: clamp(10px,5vw, 20px);
+    font-size: clamp(10px,3vw, 20px);
     color: #00A7DC;
     border: 2px solid #B7E2F0;
     border-radius: 30px;
@@ -99,7 +108,7 @@ body{
 }
 
 .aquariumType label, .temperatureType label, .plantedAquarium label{
-    font-size: clamp(10px,5vw, 20px);
+    font-size: clamp(10px,3vw, 20px);
     color: #00A7DC;
     border: 2px solid #B7E2F0;
     border-radius: 30px;
@@ -136,6 +145,7 @@ body{
     width: 90%;
 }
 
+
 .swiperIcon{
     width: 10%;
 }
@@ -166,19 +176,42 @@ body{
 
 
 @media only screen and (max-width: 1250px){
-    .plantedAquarium, .temperatureType, .aquariumType, .gh, .ph, .luminosidad, .litros{
+    .plantedAquarium, .temperatureType, .aquariumType, .gh, .ph, .luminosidad, .litros, .conditionsContainer, .screenRight, .screenLeft{
         width: fit-content;
         display: flex;
         flex-direction: column;
     }
 
+    .temperatureType{
+        display: none;
+    }
+
+    .conditionsContainer, .screenRight, .screenLeft{
+        width: 90%;
+    }
+
+    .video{
+        width: 100%;
+        height: 315px;
+    }
+
 }
 
 @media only screen and (max-width: 850px){
-    .wattsCalculation{
+    .wattsCalculation, .buttonsContainer{
         display: flex;
         flex-direction: column;
     }
+}
+
+@media only screen and (max-width: 500px){
+    .swiperTop, .luminosityInput , .wattsCalculationInput {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+
 
 }
 

@@ -19,7 +19,7 @@
         <img class="logo mt-5" src="images/logoAquaria.png" alt="logo" />
     </div>
     <div class="conditions m-5">
-        <div class="bg-white m-2 d-flex flex-row">
+        <div class="conditionsContainer bg-white m-2 d-flex">
             <div class="screenLeft bg-white">
                 <div class="litros m-4 align-items-baseline">
                     <h4>Litros del acuario:</h4>
@@ -52,14 +52,14 @@
                         </label>
                     </div>
                 </div>
-                <div class="expand collapse m-4 p-3" id="expand">
-                    <div class="wattsCalculation align-items-baseline">
+                <div class="expand collapse m-3" id="expand">
+                    <div class="wattsCalculation align-items-baseline m-3">
                         <h4>Vatios de tu lámpara:</h4> 
                         <div class="wattsCalculationInput align-items-baseline mb-2">
                             <input class="pl-2 ml-3 bg-white" name="watts" id="watts" type="number" step=".01">
                             <h2 class="ml-1 bg-white">W</h2>
                         </div>
-                        <button type="button" class="calculate btn btn-info ml-3" onclick="calculateLuminosity()">Calcular</button>
+                        <button type="button" class="calculate btn btn-info ml-1" onclick="calculateLuminosity()">Calcular</button>
                     </div>
 
                     <p class="bg-white m-3">Nota: La fórmula utilizada es lm/l = (Vatios * 70)/l. Ésta es una fórmula genérica que da un valor aproximado pero que no refleja la realidad al 100%. Los lm/l dependen de muchos más factores que aquí no se recogen.</p>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
             </div>
-            <div class="screenRight bg-white d-flex flex-column justify-content-center align-items-center">
+            <div class="screenRight bg-white d-flex flex-column">
                 <h2>Vídeo recomendado</h2>
                 <iframe class="video bg-white" width="560" height="315" src="https://www.youtube.com/embed/sQBc85gg7HU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
@@ -120,7 +120,7 @@
 
         <div class="panel-group m-1 bg-white" id="accordion">
             <div class="mb-3 panel bg-white">
-                <div class="bg-white d-flex justify-content-sm-around" id="headingOne">
+                <div class="buttonsContainer bg-white d-flex justify-content-sm-around" id="headingOne">
                     <h5 class="bg-white">
                         <button class="button btn d-flex align-items-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="loadPlantData()">
                             Plantas y corales <i class="fa fa-leaf bg-white m-1 " aria-hidden="true"></i>
