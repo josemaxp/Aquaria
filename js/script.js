@@ -45,8 +45,8 @@ function showAllPlants(){
   for(var i = 0; i < plants.records.length; i++){
     document.getElementById("infoPlants").innerHTML += 
       "<div class='swiperContainer swiper-slide card'>"+
-        "<div class='swiperTop d-flex my-3 mx-1'>"+
-          "<div class='swiperTitle d-flex justify-content-center align-items-center bg-white'>"+
+        "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
+          "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
             "<h5 class='bg-white'>"+plants.records[i].nombreCientifico+"</h5>"+
           "</div>"+
           "<div class='swiperIcon bg-white'>"+
@@ -75,8 +75,8 @@ function showAllFish(){
   for(var i = 0; i < fishes.records.length; i++){
     document.getElementById("infoFishes").innerHTML += 
       "<div class='swiperContainer swiper-slide card'>"+
-        "<div class='swiperTop d-flex my-3 mx-1'>"+
-          "<div class='swiperTitle d-flex justify-content-center align-items-center bg-white'>"+
+        "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
+          "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
             "<h5 class='bg-white'>"+fishes.records[i].nombreCientifico+"</h5>"+
           "</div>"+
           "<div class='swiperIcon bg-white'>"+
@@ -223,8 +223,8 @@ function loadPlantData(){
 
         document.getElementById("infoPlants").innerHTML += 
           "<div class='swiperContainer swiper-slide card'>"+
-            "<div class='swiperTop d-flex my-3 mx-1'>"+
-                "<div class='swiperTitle d-flex justify-content-center align-items-center bg-white'>"+
+            "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
+                "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
                     "<h5 class='bg-white'>"+plants.records[i].nombreCientifico+"</h5>"+
                 "</div>"+
                 "<div class='swiperIcon bg-white'>"+
@@ -290,8 +290,8 @@ function loadFishData(){
 
         document.getElementById("infoFishes").innerHTML += 
           "<div class='swiperContainer swiper-slide card'>"+
-            "<div class='swiperTop d-flex my-3 mx-1'>"+
-                "<div class='swiperTitle d-flex justify-content-center align-items-center bg-white'>"+
+            "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
+                "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
                     "<h5 class='bg-white'>"+fishes.records[i].nombreCientifico+"</h5>"+
                 "</div>"+
                 "<div class='swiperIcon bg-white'>"+
