@@ -454,7 +454,7 @@ function loadFishesModelInfo(id){
             "<p class='text-white'>"+fishes.records[i].problemas+"</p>"+
         "</div>"+
       "</div>"+
-      "<div class='modal-footer'>"+
+      "<div class='modal-footer bg-dark'>"+
         "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Cerrar</button>"+
         "<button type='button' class='btn btn-primary' href='"+fishes.records[i].tienda+"'>Comprar</button>"+
       "</div>";
