@@ -39,7 +39,6 @@ body{
 }
 
 .conditions, .cardContainer{
-    width: auto;
     border: 2px solid #B7E2F0 ;
     border-radius: 30px;
     background-color: #FFFFFF;
@@ -213,7 +212,6 @@ h2{
 
 @media only screen and (max-width: 1250px){
     .conditionsContainer, .screenRight, .screenLeft{
-        width: fit-content;
         display: flex;
         flex-direction: column;
     }

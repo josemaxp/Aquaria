@@ -47,7 +47,7 @@ function showAllPlants(){
       "<div class='swiperContainer swiper-slide card'>"+
         "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
           "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
-            "<h5 class='bg-white'>"+plants.records[i].nombreCientifico+"</h5>"+
+            "<h5 class='bg-white'><i class='bg-white'>"+plants.records[i].nombreCientifico+"</i></h5>"+
           "</div>"+
           "<div class='swiperIcon bg-white'>"+
             "<button type='button' class='buttonIcon btn' data-toggle='modal' data-target='#modal' onclick='loadPlantsModelInfo("+plants.records[i].id+")'>"+
@@ -77,7 +77,7 @@ function showAllFish(){
       "<div class='swiperContainer swiper-slide card'>"+
         "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
           "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
-            "<h5 class='bg-white'>"+fishes.records[i].nombreCientifico+"</h5>"+
+            "<h5 class='bg-white'><i class='bg-white'>"+fishes.records[i].nombreCientifico+"</i></h5>"+
           "</div>"+
           "<div class='swiperIcon bg-white'>"+
             "<button type='button' class='buttonIcon btn' data-toggle='modal' data-target='#modal' onclick='loadFishesModelInfo("+fishes.records[i].id+")'>"+
@@ -225,7 +225,7 @@ function loadPlantData(){
           "<div class='swiperContainer swiper-slide card'>"+
             "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
                 "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
-                    "<h5 class='bg-white'>"+plants.records[i].nombreCientifico+"</h5>"+
+                    "<h5 class='bg-white'><i class='bg-white'>"+plants.records[i].nombreCientifico+"</i></h5>"+
                 "</div>"+
                 "<div class='swiperIcon bg-white'>"+
                     "<button type='button' class='buttonIcon btn' data-toggle='modal' data-target='#modal' onclick='loadPlantsModelInfo("+plants.records[i].id+")'>"+
@@ -292,7 +292,7 @@ function loadFishData(){
           "<div class='swiperContainer swiper-slide card'>"+
             "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
                 "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
-                    "<h5 class='bg-white'>"+fishes.records[i].nombreCientifico+"</h5>"+
+                    "<h5 class='bg-white'><i class='bg-white'>"+fishes.records[i].nombreCientifico+"</i></h5>"+
                 "</div>"+
                 "<div class='swiperIcon bg-white'>"+
                     "<button type='button' class='buttonIcon btn' data-toggle='modal' data-target='#modal' onclick='loadFishesModelInfo("+fishes.records[i].id+")'>"+
@@ -328,7 +328,7 @@ function loadPlantsModelInfo(id){
 
       document.getElementById("modalInfo").innerHTML +=
       "<div class='modal-header bg-info'>"+
-        "<h5 class='modal-title bg-info' id='modalLabel' title='Nombre común - Nombre científico'>"+plants.records[i].nombreComun +" - "+ plants.records[i].nombreCientifico+"</h5>"+
+        "<h5 class='modal-title bg-info' id='modalLabel' title='Nombre común - Nombre científico'>"+plants.records[i].nombreComun +" - <i class='bg-transparent'>"+ plants.records[i].nombreCientifico+"</i></h5>"+
         "<button type='button' class='close bg-transparent' data-dismiss='modal' aria-label='Close'>"+
           "<span aria-hidden='true' class='bg-transparent'>&times;</span>"+
         "</button>"+
@@ -400,7 +400,7 @@ function loadFishesModelInfo(id){
 
       document.getElementById("modalInfo").innerHTML +=
       "<div class='modal-header bg-info'>"+
-        "<h5 class='modal-title bg-info' id='modalLabel' title='Nombre común - Nombre científico'>"+fishes.records[i].nombreComun +" - "+ fishes.records[i].nombreCientifico+"</h5>"+
+        "<h5 class='modal-title bg-info' id='modalLabel' title='Nombre común - Nombre científico'>"+fishes.records[i].nombreComun +" - <i class='bg-transparent'>"+ fishes.records[i].nombreCientifico+"</i></h5>"+
         "<button type='button' class='close bg-transparent' data-dismiss='modal' aria-label='Close'>"+
           "<span aria-hidden='true' class='bg-transparent'>&times;</span>"+
         "</button>"+
