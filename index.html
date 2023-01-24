@@ -18,30 +18,32 @@
     <div class="title d-flex justify-content-center align-items-center">
         <img class="logo mt-5" src="images/logoAquaria.png" alt="logo" />
     </div>
-    <div class="conditions m-5">
-        <div class="conditionsContainer bg-white m-2 d-flex">
+    <div class="conditions">
+        <div class="conditionsContainer bg-white d-flex">
             <div class="screenLeft bg-white">
-                <div class="litros m-4 align-items-baseline">
+                <div class="parameterDiv1 align-items-baseline">
                     <h4>Litros del acuario:</h4>
                     <div class="litersInput align-items-baseline">
-                        <input name="litros" class="pl-2 ml-3" id="liters" type="number" min=0>
+                        <input name="litros" class="inputContainer pl-2" id="liters" type="number" min=0>
                         <h2 class="ml-1">l</h2>
                     </div>
                 </div>
 
-                <div class="luminosidad m-4 align-items-baseline">
-                    <h4>Luminosidad:</h4>
-                    <div class="luminosityInput align-items-baseline">
-                        <input class="pl-2 ml-3" name="luminosidad" id="luminosity" type="number" step=".01" min=0>
-                        <h2 class="ml-1">lm/l</h2>
-                        <div class="calculate">
-                            <button type="button" class="collapsible btn ml-3" data-toggle="collapse" data-target="#expand">
-                                <i class="fa-solid fa-calculator"></i>
-                            </button>
+                <div class="parameterDiv luminosityDiv align-items-baseline">
+                    <div class="luminosityDiv2 bg-white">
+                        <h4>Luminosidad:</h4>
+                        <div class="luminosityInput align-items-baseline">
+                            <input class="inputContainer pl-2" name="luminosidad" id="luminosity" type="number" step=".01" min=0>
+                            <h2 class="ml-1">lm/l</h2>
                         </div>
                     </div>
+                    <div class="calculate">
+                        <button type="button" class="collapsible btn ml-3" data-toggle="collapse" data-target="#expand">
+                            <i class="fa-solid fa-calculator"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="plantedAquarium m-4 align-items-baseline">
+                <div class="parameterDiv align-items-baseline">
                     <h4>Tipo de bombilla: </h4>
                     <div class="bulbTypeContainer btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons" id="bulbTypeContainer">
                         <label class="btn btn-info">
@@ -52,33 +54,32 @@
                         </label>
                     </div>
                 </div>
-                <div class="expand collapse m-3" id="expand">
-                    <div class="wattsCalculation align-items-baseline m-3">
+                <div class="expand collapse" id="expand">
+                    <div class="wattsCalculation align-items-baseline">
                         <h4>Vatios de tu lámpara:</h4> 
-                        <div class="wattsCalculationInput align-items-baseline mb-2">
-                            <input class="pl-2 ml-3 bg-white" name="watts" id="watts" type="number" step=".01">
-                            <h2 class="ml-1 bg-white">W</h2>
+                        <div class="wattsCalculationInput align-items-baseline mb-2 justify-content-sm-around">
+                            <input class="inputContainer pl-2 bg-white" name="watts" id="watts" type="number" step=".01">
+                            <h2 class="bg-white">W</h2>
                         </div>
-                        <button type="button" class="calculate btn btn-info ml-1" onclick="calculateLuminosity()">Calcular</button>
+                        <button type="button" class="calculate btn btn-info" onclick="calculateLuminosity()">Calcular</button>
                     </div>
-
                     <p class="bg-white m-3">Nota: La fórmula utilizada es lm/l = (Vatios * 70)/l. Ésta es una fórmula genérica que da un valor aproximado pero que no refleja la realidad al 100%. Los lm/l dependen de muchos más factores que aquí no se recogen.</p>
                 </div>
-                <div class="ph m-4 align-items-baseline">
+                <div class="parameterDiv align-items-baseline">
                     <h4>pH del agua:</h4>
                     <div class="phInput align-items-baseline">
-                        <input name="ph" class="ml-3 pl-2" id="litros" type="number" step=".1" min=0 max=14>
+                        <input name="ph" class="inputContainer pl-2" id="litros" type="number" step=".1" min=0 max=14>
                         <h2 class="ml-1">pH</h2>
                     </div>
                 </div>
-                <div class="gh m-4 align-items-baseline">
+                <div class="parameterDiv align-items-baseline">
                     <h4>Dureza del agua:</h4>
                     <div class="ghInput align-items-baseline">
-                        <input name="gh" class="ml-3 pl-2" id="gh" type="number" step=".1" min=0 max=30>
+                        <input name="gh" class="inputContainer pl-2" id="gh" type="number" step=".1" min=0 max=30>
                         <h2 class="ml-1">dH</h2>
                     </div>
                 </div>
-                <div class="aquariumType m-4 align-items-baseline">
+                <div class="parameterDiv align-items-baseline">
                     <h4>Tipo de acuario:</h4>
                     <div class="waterTypeContainer btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons" id="waterTypeContainer">
                         <label class="btn btn-info" onclick="showTemperature()">
@@ -89,7 +90,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="temperatureType m-4 align-items-baseline" id="temperature">
+                <div class="parameterDiv temperatureType align-items-baseline" id="temperature">
                     <h4>Temperatura del agua:</h4>
                     <div class="temperatureContainer btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons" id="temperatureContainer">
                         <label class="btn btn-info" id="cold1">
@@ -100,7 +101,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="plantedAquarium m-4 align-items-baseline">
+                <div class="parameterDiv align-items-baseline">
                     <h4>¿Es un acuario plantado o con corales?</h4>
                     <div class="plantedContainer btn-group btn-group-toggle bg-white ml-3" data-toggle="buttons" id="plantedContainer">
                         <label class="btn btn-info">
@@ -112,9 +113,9 @@
                     </div>
                 </div>
             </div>
-            <div class="screenRight bg-white d-flex flex-column">
+            <div class="screenRight bg-white d-flex flex-column mr-3">
                 <h2>Vídeo recomendado</h2>
-                <iframe class="video bg-white" width="560" height="315" src="https://www.youtube.com/embed/sQBc85gg7HU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe class="video bg-white" src="https://www.youtube.com/embed/sQBc85gg7HU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
 

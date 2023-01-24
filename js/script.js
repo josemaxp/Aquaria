@@ -206,16 +206,16 @@ function loadPlantData(){
 
       if(planted == "no"){
       
-        document.getElementById("infoPlants").innerHTML += "<p class='bg-white m-3' style='color:red;''>No se muestra ninguna planta o coral puesto que tu acuario no será plantado.</p>";
+        document.getElementById("infoPlants").innerHTML += "<p class='bg-white' style='color:red;''>No se muestra ninguna planta o coral puesto que tu acuario no será plantado.</p>";
         break;
       }else if(waterType == "salada"){
 
-        document.getElementById("infoPlants").innerHTML += "<p class='bg-white m-3' style='color:red;''>Los datos de los corales aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
+        document.getElementById("infoPlants").innerHTML += "<p class='bg-white' style='color:red;''>Los datos de los corales aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
         break;
 
       }else if(temperature == "fria"){
 
-        document.getElementById("infoPlants").innerHTML += "<p class='bg-white m-3' style='color:red;''>Los datos de las plantas de agua fría aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
+        document.getElementById("infoPlants").innerHTML += "<p class='bg-white' style='color:red;''>Los datos de las plantas de agua fría aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
         break;
 
       }else if(temperature == "caliente" && parseFloat(luminosity) >= parseFloat(plantLuminosity) && parseFloat(plantTemperature[1]) > 19 && plants.records[i].tipoAgua == "dulce"){
@@ -242,11 +242,11 @@ function loadPlantData(){
     }
 
   }else{
-    document.getElementById("infoPlants").innerHTML += "<p class='bg-white m-3' style='color:red;''>Por favor, rellene correctamente todos los campos marcados en rojo.</p>";
+    document.getElementById("infoPlants").innerHTML += "<p class='bg-white' style='color:red;''>Por favor, rellene correctamente todos los campos marcados en rojo.</p>";
   }
 
   if (!checkHotWaterPlants && temperature == "caliente" && waterType != "salada" && planted == "si"){
-    document.getElementById("infoPlants").innerHTML += "<p class='bg-white m-3' style='color:red;''>No existen plantas que cumplan estas condiciones.</p>";
+    document.getElementById("infoPlants").innerHTML += "<p class='bg-white' style='color:red;''>No existen plantas que cumplan estas condiciones.</p>";
   }
 }
 
@@ -277,12 +277,12 @@ function loadFishData(){
 
       if(waterType == "salada"){
 
-        document.getElementById("infoFishes").innerHTML += "<p class='bg-white m-3' style='color:red;''>Los datos de los peces de agua salada aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
+        document.getElementById("infoFishes").innerHTML += "<p class='bg-white' style='color:red;''>Los datos de los peces de agua salada aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
         break;
 
       }else if(temperature == "fria"){
 
-        document.getElementById("infoFishes").innerHTML += "<p class='bg-white m-3' style='color:red;''>Los datos de los peces de agua fría aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
+        document.getElementById("infoFishes").innerHTML += "<p class='bg-white' style='color:red;''>Los datos de los peces de agua fría aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
         break;
 
       }else if(temperature == "caliente" && parseFloat(fishTemperature[1]) > 19 && fishes.records[i].tipoAgua == "dulce" && parseFloat(liters) >= parseFloat(fishes.records[i].litrosAcuario)){
@@ -309,11 +309,11 @@ function loadFishData(){
     }
 
   }else{
-    document.getElementById("infoFishes").innerHTML += "<p class='bg-white m-3' style='color:red;''>Por favor, rellene correctamente todos los campos marcados en rojo.</p>";
+    document.getElementById("infoFishes").innerHTML += "<p class='bg-white' style='color:red;''>Por favor, rellene correctamente todos los campos marcados en rojo.</p>";
   }
 
   if (!checkHotWaterFishes && temperature == "caliente" && waterType != "salada"){
-    document.getElementById("infoFishes").innerHTML += "<p class='bg-white m-3' style='color:red;''>No existen peces que cumplan estas condiciones.</p>";
+    document.getElementById("infoFishes").innerHTML += "<p class='bg-white' style='color:red;''>No existen peces que cumplan estas condiciones.</p>";
   }
 }
 
@@ -380,7 +380,7 @@ function loadPlantsModelInfo(id){
             "<p class='text-white'>"+plants.records[i].problemas+"</p>"+
         "</div>"+
       "</div>"+
-      "<div class='modal-footer'>"+
+      "<div class='modal-footer bg-dark'>"+
         "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Cerrar</button>"+
         "<button type='button' class='btn btn-primary' href='"+plants.records[i].tienda+"'>Comprar</button>"+
       "</div>";
