@@ -541,22 +541,22 @@ function advices(){
               }
 
               if(commonPh.length == 1){
-                var phText = "con un pH de "+commonPh[0]+" pH";
+                var phText = "con un pH de "+commonPh[0]+"";
               }else{
-                var phText = "con un pH que se encuentre en el rango de "+commonPh[0]+"-"+commonPh[commonPh.length-1]+" pH";
+                var phText = "con un pH que se encuentre entre "+commonPh[0]+"-"+commonPh[commonPh.length-1]+"";
               }
 
               if(commonGh.length == 1){
-                var ghText = "y un gH de "+commonGh[0]+" gH";
+                var ghText = "y un gH de "+commonGh[0]+"";
               }else{
-                var ghText = "y un gH que se encuentre en el rango de "+commonGh[0]+"-"+commonGh[commonGh.length-1]+" gH";
+                var ghText = "y un gH que se encuentre entre "+commonGh[0]+"-"+commonGh[commonGh.length-1]+"";
               }
 
               document.getElementById("advices").innerHTML +=
               "<p class= 'bg-white'> Una posible combinación para tu acuario podría ser: "+
               fishes.records[parseInt(idFish)].numeroCardumen+" "+ fishes.records[parseInt(idFish)].nombreComun+" junto a "+
               fishes.records[parseInt(i)].numeroCardumen+" "+ fishes.records[parseInt(i)].nombreComun+". "+ temperatureText+
-              ", "+phText+" "+ghText+". Comprueba la ficha para obtener de las especies para obtener más información.</p>";
+              ", "+phText+" "+ghText+". Comprueba la ficha para obtener más información sobre las especies.</p>";
 
               checkAdvices = true;
 
@@ -570,8 +570,8 @@ function advices(){
             " Algo que podrías mantener sin problemas es, por ejemplo, "+fishes.records[parseInt(idFish)].numeroCardumen+ 
             " "+fishes.records[parseInt(idFish)].nombreComun+ " (comprueba su ficha para obtener más información)."+
             " El acuario debería encontrarse en el rango de temperatura de "+fishes.records[idFish].temperatura+
-            "ºC, con un pH que se encuentre en el rango de "+fishes.records[idFish].ph+" pH y un gH que se encuentre en el rango de "+
-            fishes.records[idFish].gh+" gH.</p>";
+            "ºC, con un pH que se encuentre entre "+fishes.records[idFish].ph+" y un gH que se encuentre entre "+
+            fishes.records[idFish].gh+".</p>";
 
             checkAdvices = true;
             break;
@@ -591,9 +591,11 @@ function compareValues(value1, value2) {
   let commonMin = Math.max(value1[0], value2[0]);
   let commonMax = Math.min(value1[1], value2[1]);
 
-  if (commonMin <= commonMax) {
+  if (commonMin < commonMax) {
     commonValues.push(commonMin);
     commonValues.push(commonMax);
+  }else if(commonMin == commonMax){
+    commonValues.push(commonMin);
   }
 
   return commonValues;
