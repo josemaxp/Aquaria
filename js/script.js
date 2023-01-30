@@ -32,6 +32,28 @@ function hideTemperature(){
   }
 }
 
+function swiperBuilder(nombreComun,id,imagen,model){
+  var swiperString = 
+    "<div class='swiperContainer swiper-slide card'>"+
+        "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
+          "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
+            "<h5 class='bg-white'><i class='bg-white'>"+nombreComun+"</i></h5>"+
+          "</div>"+
+          "<div class='swiperIcon bg-white'>"+
+            "<button type='button' class='buttonIcon btn' data-toggle='modal' data-target='#modal' onclick='"+model+"("+id+")'>"+
+              "<i class='fa fa-eye bg-white' aria-hidden='true'></i>"+
+            "</button>"+
+          "</div>"+
+        "</div>"+
+        "<div class='swiperImgContainer d-flex justify-content-center align-items-center bg-white'>"+
+          "<img class='swiperImg' src='"+imagen+"'/>"+                                 
+        "</div>"+
+      "</div>";
+
+  return swiperString;
+
+}
+
 function showAllPlants(){
   document.getElementById("infoPlants").innerHTML = '';
 
@@ -43,22 +65,7 @@ function showAllPlants(){
   plantedContainer.style.borderColor = "#FFFFFF";
 
   for(var i = 0; i < plants.records.length; i++){
-    document.getElementById("infoPlants").innerHTML += 
-      "<div class='swiperContainer swiper-slide card'>"+
-        "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
-          "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
-            "<h5 class='bg-white'><i class='bg-white'>"+plants.records[i].nombreCientifico+"</i></h5>"+
-          "</div>"+
-          "<div class='swiperIcon bg-white'>"+
-            "<button type='button' class='buttonIcon btn' data-toggle='modal' data-target='#modal' onclick='loadPlantsModelInfo("+plants.records[i].id+")'>"+
-              "<i class='fa fa-eye bg-white' aria-hidden='true'></i>"+
-            "</button>"+
-          "</div>"+
-        "</div>"+
-        "<div class='swiperImgContainer d-flex justify-content-center align-items-center bg-white'>"+
-          "<img class='swiperImg' src='"+plants.records[i].imagen+"'/>"+                                 
-        "</div>"+
-      "</div>";
+    document.getElementById("infoPlants").innerHTML += swiperBuilder(plants.records[i].nombreComun,plants.records[i].id,plants.records[i].imagen,"loadPlantsModelInfo");
   }
 } 
 
@@ -73,22 +80,7 @@ function showAllFish(){
   plantedContainer.style.borderColor = "#FFFFFF";
 
   for(var i = 0; i < fishes.records.length; i++){
-    document.getElementById("infoFishes").innerHTML += 
-      "<div class='swiperContainer swiper-slide card'>"+
-        "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
-          "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
-            "<h5 class='bg-white'><i class='bg-white'>"+fishes.records[i].nombreCientifico+"</i></h5>"+
-          "</div>"+
-          "<div class='swiperIcon bg-white'>"+
-            "<button type='button' class='buttonIcon btn' data-toggle='modal' data-target='#modal' onclick='loadFishesModelInfo("+fishes.records[i].id+")'>"+
-              "<i class='fa fa-eye bg-white' aria-hidden='true'></i>"+
-            "</button>"+
-          "</div>"+
-        "</div>"+
-        "<div class='swiperImgContainer d-flex justify-content-center align-items-center bg-white'>"+
-          "<img class='swiperImg' src='"+fishes.records[i].imagen+"'/>"+                                 
-        "</div>"+
-      "</div>";
+    document.getElementById("infoFishes").innerHTML += swiperBuilder(fishes.records[i].nombreComun,fishes.records[i].id,fishes.records[i].imagen,"loadFishesModelInfo");
   }
 
 }
@@ -222,23 +214,7 @@ function loadPlantData(){
       }else if(temperature == "caliente" && parseFloat(luminosity) >= parseFloat(plantLuminosity) && parseFloat(plantTemperature[1]) > 19 && plants.records[i].tipoAgua == "dulce"){
         checkHotWaterPlants = true;
 
-        document.getElementById("infoPlants").innerHTML += 
-          "<div class='swiperContainer swiper-slide card'>"+
-            "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
-                "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
-                    "<h5 class='bg-white'><i class='bg-white'>"+plants.records[i].nombreCientifico+"</i></h5>"+
-                "</div>"+
-                "<div class='swiperIcon bg-white'>"+
-                    "<button type='button' class='buttonIcon btn' data-toggle='modal' data-target='#modal' onclick='loadPlantsModelInfo("+plants.records[i].id+")'>"+
-                      "<i class='fa fa-eye bg-white' aria-hidden='true'></i>"+
-                    "</button>"+
-                "</div>"+
-            "</div>"+
-            "<div class='swiperImgContainer d-flex justify-content-center align-items-center bg-white'>"+
-                "<img class='swiperImg' src='"+plants.records[i].imagen+"'/>"+                                 
-            "</div>"+
-          "</div>";
-
+        document.getElementById("infoPlants").innerHTML += swiperBuilder(plants.records[i].nombreComun,plants.records[i].id,plants.records[i].imagen,"loadPlantsModelInfo");
       }
     }
 
@@ -250,7 +226,6 @@ function loadPlantData(){
     document.getElementById("infoPlants").innerHTML += "<p class='bg-white' style='color:red;''>No existen plantas que cumplan estas condiciones.</p>";
   }
 }
-
 
 function loadFishData(){
   document.getElementById("infoFishes").innerHTML = '';
@@ -290,23 +265,7 @@ function loadFishData(){
       }else if(temperature == "caliente" && parseFloat(fishTemperature[1]) > 19 && fishes.records[i].tipoAgua == "dulce" && parseFloat(liters) >= parseFloat(fishes.records[i].litrosAcuario)){
         checkHotWaterFishes = true;
 
-        document.getElementById("infoFishes").innerHTML += 
-          "<div class='swiperContainer swiper-slide card'>"+
-            "<div class='swiperTop d-flex my-3 mx-1 bg-white'>"+
-                "<div class='swiperTitle d-flex align-items-center bg-white ml-2'>"+
-                    "<h5 class='bg-white'><i class='bg-white'>"+fishes.records[i].nombreCientifico+"</i></h5>"+
-                "</div>"+
-                "<div class='swiperIcon bg-white'>"+
-                    "<button type='button' class='buttonIcon btn' data-toggle='modal' data-target='#modal' onclick='loadFishesModelInfo("+fishes.records[i].id+")'>"+
-                      "<i class='fa fa-eye bg-white' aria-hidden='true'></i>"+
-                    "</button>"+
-                "</div>"+
-            "</div>"+
-            "<div class='swiperImgContainer d-flex justify-content-center align-items-center bg-white'>"+
-                "<img class='swiperImg' src='"+fishes.records[i].imagen+"'/>"+                                 
-            "</div>"+
-          "</div>";
-
+        document.getElementById("infoFishes").innerHTML += swiperBuilder(fishes.records[i].nombreComun,fishes.records[i].id,fishes.records[i].imagen,"loadFishesModelInfo");
       }
     }
 
@@ -468,6 +427,7 @@ function loadFishesModelInfo(id){
 
 function advices(){
   document.getElementById("advices").innerHTML = '';
+  document.getElementById("infoFishesAdvice").innerHTML = '';
 
   $('#collapseThree').on('hidden.bs.collapse', function () {
     $('#collapseThree').collapse('show');
@@ -497,13 +457,17 @@ function advices(){
 
     if(!checkLiters){
       document.getElementById("advices").innerHTML += "<p class='bg-white' style='color:red;''>No existe ningún pez que pueda añadirse a tu acuario y que se encuentre cómodo.</p>"
+    }else if(waterType == "salada"){
+      document.getElementById("advices").innerHTML += "<p class='bg-white' style='color:red;''>Los datos de los peces de agua salada aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
+    }else if(temperature == "fria"){
+      document.getElementById("advices").innerHTML += "<p class='bg-white' style='color:red;''>Los datos de los peces de agua fría aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
     }else{
       var checkAdvices = false;
       while(!checkAdvices){
         //Obtengo el id aleatorio de un pez de los que ya existen y que cumpla con el requisito de los litros.
         do{
           var idFish = Math.floor(Math.random() * fishes.records.length);
-        }while (parseFloat(liters) < parseFloat(fishes.records[idFish].litrosAcuario));
+        }while (parseFloat(liters) < parseFloat(fishes.records[idFish].litrosAcuario) /*|| fishes.records[idFish].tipoAgua == waterType*/);
 
         //Primero saco los peces compatibles, los cuales se encuentran en el json en compatibilidad. A partir de : estan separados por ,
         var compatibilySplitByTwoPoints = fishes.records[idFish].compatibilidad.toLowerCase().split(":");
@@ -517,11 +481,11 @@ function advices(){
         //Como el JSON acaba en punto, se lo quito al último dato
           compatibilySplitByTwoComa[compatibilySplitByTwoComa.length-1] = compatibilySplitByTwoComa[compatibilySplitByTwoComa.length-1].slice(0,-1);
 
-      //Ahora comparo con otros peces para buscar los que son compatibles.
+        //Ahora comparo con otros peces para buscar los que son compatibles.
         for (var i = 0; i < fishes.records.length; i++) {
 
           //Comprueblo que el pez no es él mismo, que cumple el requisito de los litros y que se encuentra en las compatibilidades
-          if(fishes.records[idFish].id != fishes.records[i].id && parseFloat(liters) >= parseFloat(fishes.records[i].litrosAcuario) && compatibilySplitByTwoComa.includes(fishes.records[i].nombreComun.toLowerCase().trim())){
+          if(fishes.records[idFish].id != fishes.records[i].id && parseFloat(liters) >= parseFloat(fishes.records[i].litrosAcuario) && compatibilySplitByTwoComa.includes(fishes.records[i].nombreComun.toLowerCase().trim()) && fishes.records[idFish].tipoAgua == fishes.records[i].tipoAgua){
             var tempFish1 = fishes.records[idFish].temperatura.split("-");
             var tempFish2 = fishes.records[i].temperatura.split("-");
             var phFish1 = fishes.records[idFish].ph.split("-");
@@ -553,10 +517,15 @@ function advices(){
               }
 
               document.getElementById("advices").innerHTML +=
-              "<p class= 'bg-white'> Una posible combinación para tu acuario podría ser: "+
+              "<p class= 'bg-white'>Según las condiciones de tu acuario podrías mantener, por ejemplo, "+
               fishes.records[parseInt(idFish)].numeroCardumen+" "+ fishes.records[parseInt(idFish)].nombreComun+" junto a "+
               fishes.records[parseInt(i)].numeroCardumen+" "+ fishes.records[parseInt(i)].nombreComun+". "+ temperatureText+
-              ", "+phText+" "+ghText+". Comprueba la ficha para obtener más información sobre las especies.</p>";
+              ", "+phText+" "+ghText+". Comprueba las fichas de las especies para obtener más información sobre ellas.</p>";
+
+              document.getElementById("infoFishesAdvice").innerHTML +=  
+              swiperBuilder(fishes.records[idFish].nombreComun,fishes.records[idFish].id,fishes.records[idFish].imagen,"loadFishesModelInfo")+
+              swiperBuilder(fishes.records[i].nombreComun,fishes.records[i].id,fishes.records[i].imagen,"loadFishesModelInfo");
+                  
 
               checkAdvices = true;
 
@@ -572,6 +541,9 @@ function advices(){
             " El acuario debería encontrarse en el rango de temperatura de "+fishes.records[idFish].temperatura+
             "ºC, con un pH que se encuentre entre "+fishes.records[idFish].ph+" y un gH que se encuentre entre "+
             fishes.records[idFish].gh+".</p>";
+
+            document.getElementById("infoFishesAdvice").innerHTML +=  
+              swiperBuilder(fishes.records[idFish].nombreComun,fishes.records[idFish].id,fishes.records[idFish].imagen,"loadFishesModelInfo");
 
             checkAdvices = true;
             break;
