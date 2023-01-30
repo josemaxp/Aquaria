@@ -528,7 +528,7 @@ function advices(){
 
               document.getElementById("infoFishesAdvice").innerHTML +=  
               swiperBuilder(fishes.records[idFish].nombreComun,fishes.records[idFish].id,fishes.records[idFish].imagen,"loadFishesModelInfo")+
-              swiperBuilder(fishes.records[idFishToCompare].nombreComun,fishes.records[i].id,fishes.records[idFishToCompare].imagen,"loadFishesModelInfo");
+              swiperBuilder(fishes.records[idFishToCompare].nombreComun,fishes.records[idFishToCompare].id,fishes.records[idFishToCompare].imagen,"loadFishesModelInfo");
                   
 
               checkAdvices = true;
