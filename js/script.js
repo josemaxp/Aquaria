@@ -481,17 +481,21 @@ function advices(){
         //Como el JSON acaba en punto, se lo quito al último dato
           compatibilySplitByTwoComa[compatibilySplitByTwoComa.length-1] = compatibilySplitByTwoComa[compatibilySplitByTwoComa.length-1].slice(0,-1);
 
-        //Ahora comparo con otros peces para buscar los que son compatibles.
-        for (var i = 0; i < fishes.records.length; i++) {
+        //Ahora comparo con otros peces para buscar los que son compatibles de forma aleatoria.
+        var fishesCompared = new Set();
 
+        do{
+          var idFishToCompare = Math.floor(Math.random() * fishes.records.length);
+          fishesCompared.add(idFishToCompare);
+        
           //Comprueblo que el pez no es él mismo, que cumple el requisito de los litros y que se encuentra en las compatibilidades
-          if(fishes.records[idFish].id != fishes.records[i].id && parseFloat(liters) >= parseFloat(fishes.records[i].litrosAcuario) && compatibilySplitByTwoComa.includes(fishes.records[i].nombreComun.toLowerCase().trim()) && fishes.records[idFish].tipoAgua == fishes.records[i].tipoAgua){
+          if(fishes.records[idFish].id != fishes.records[idFishToCompare].id && parseFloat(liters) >= parseFloat(fishes.records[idFishToCompare].litrosAcuario) && compatibilySplitByTwoComa.includes(fishes.records[idFishToCompare].nombreComun.toLowerCase().trim()) && fishes.records[idFish].tipoAgua == fishes.records[idFishToCompare].tipoAgua){
             var tempFish1 = fishes.records[idFish].temperatura.split("-");
-            var tempFish2 = fishes.records[i].temperatura.split("-");
+            var tempFish2 = fishes.records[idFishToCompare].temperatura.split("-");
             var phFish1 = fishes.records[idFish].ph.split("-");
-            var phFish2 = fishes.records[i].ph.split("-");
+            var phFish2 = fishes.records[idFishToCompare].ph.split("-");
             var ghFish1 = fishes.records[idFish].gh.split("-");
-            var ghFish2 = fishes.records[i].gh.split("-");
+            var ghFish2 = fishes.records[idFishToCompare].gh.split("-");
 
             var commonTemp = compareValues(tempFish1, tempFish2);
             var commonPh = compareValues(phFish1, phFish2);
@@ -519,12 +523,12 @@ function advices(){
               document.getElementById("advices").innerHTML +=
               "<p class= 'bg-white'>Según las condiciones de tu acuario podrías mantener, por ejemplo, "+
               fishes.records[parseInt(idFish)].numeroCardumen+" "+ fishes.records[parseInt(idFish)].nombreComun+" junto a "+
-              fishes.records[parseInt(i)].numeroCardumen+" "+ fishes.records[parseInt(i)].nombreComun+". "+ temperatureText+
+              fishes.records[parseInt(idFishToCompare)].numeroCardumen+" "+ fishes.records[parseInt(idFishToCompare)].nombreComun+". "+ temperatureText+
               ", "+phText+" "+ghText+". Comprueba las fichas de las especies para obtener más información sobre ellas.</p>";
 
               document.getElementById("infoFishesAdvice").innerHTML +=  
               swiperBuilder(fishes.records[idFish].nombreComun,fishes.records[idFish].id,fishes.records[idFish].imagen,"loadFishesModelInfo")+
-              swiperBuilder(fishes.records[i].nombreComun,fishes.records[i].id,fishes.records[i].imagen,"loadFishesModelInfo");
+              swiperBuilder(fishes.records[idFishToCompare].nombreComun,fishes.records[i].id,fishes.records[idFishToCompare].imagen,"loadFishesModelInfo");
                   
 
               checkAdvices = true;
@@ -532,8 +536,9 @@ function advices(){
               break;
             }
           }
+        }while (fishesCompared.size != fishes.records.length);
 
-          if(i == (fishes.records.length-1) && !checkAdvices){
+          if(fishesCompared.size == fishes.records.length && !checkAdvices){
             document.getElementById("advices").innerHTML +=
             "<p class= 'bg-white'>Por las condiciones de tu acuario es mejor que mantengas una única especie."+
             " Algo que podrías mantener sin problemas es, por ejemplo, "+fishes.records[parseInt(idFish)].numeroCardumen+ 
@@ -548,14 +553,15 @@ function advices(){
             checkAdvices = true;
             break;
           }
-        }
       }
     }
   }else{
     document.getElementById("advices").innerHTML += "<p class='bg-white' style='color:red;''>Por favor, rellene correctamente todos los campos marcados en rojo.</p>";
   }
-
 }
+
+
+
 
 function compareValues(value1, value2) {
   var commonValues = [];
