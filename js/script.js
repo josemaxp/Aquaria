@@ -257,9 +257,10 @@ function loadFishData(){
         document.getElementById("infoFishes").innerHTML += "<p class='bg-white' style='color:red;''>Los datos de los peces de agua salada aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
         break;
 
-      }else if(temperature == "fria"){
+      }else if(temperature == "fria" && parseFloat(fishTemperature[0]) < 5 && fishes.records[i].tipoAgua == "dulce" && parseFloat(liters) >= parseFloat(fishes.records[i].litrosAcuario)){
+        checkHotWaterFishes = true;
 
-        document.getElementById("infoFishes").innerHTML += "<p class='bg-white' style='color:red;''>Los datos de los peces de agua fría aún se encuentran incompletos. Estarán disponibles lo antes posible.</p>";
+        document.getElementById("infoFishes").innerHTML += swiperBuilder(fishes.records[i].nombreComun,fishes.records[i].id,fishes.records[i].imagen,"loadFishesModelInfo");
         break;
 
       }else if(temperature == "caliente" && parseFloat(fishTemperature[1]) > 19 && fishes.records[i].tipoAgua == "dulce" && parseFloat(liters) >= parseFloat(fishes.records[i].litrosAcuario)){
@@ -273,7 +274,7 @@ function loadFishData(){
     document.getElementById("infoFishes").innerHTML += "<p class='bg-white' style='color:red;''>Por favor, rellene correctamente todos los campos marcados en rojo.</p>";
   }
 
-  if (!checkHotWaterFishes && temperature == "caliente" && waterType != "salada"){
+  if (!checkHotWaterFishes && (temperature == "caliente" || temperature == "fria") && waterType != "salada"){
     document.getElementById("infoFishes").innerHTML += "<p class='bg-white' style='color:red;''>No existen peces que cumplan estas condiciones.</p>";
   }
 }
@@ -454,7 +455,6 @@ function advices(){
       }
     }
 
-
     if(!checkLiters){
       document.getElementById("advices").innerHTML += "<p class='bg-white' style='color:red;''>No existe ningún pez que pueda añadirse a tu acuario y que se encuentre cómodo.</p>"
     }else if(waterType == "salada"){
@@ -583,12 +583,11 @@ function compareValues(value1, value2) {
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetweenSlides: 10,
-  slidesPerGroup: 1,
   breakpoints: {
     800: {
       slidesPerView: 3,
       spaceBetweenSlides: 30,
-      slidesPerGroup: 3,
+      spaceBetween: 10,
     },
   },
   loop: false,

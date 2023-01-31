@@ -168,6 +168,10 @@ h2{
     height: 100%;
 }
 
+.swiper-wrapper{
+    width: 50%;
+}
+
 .swiperTitle{
     width: 90%;
 }
@@ -183,7 +187,7 @@ h2{
 
 .swiperImg, .modalImg{
     width: 100%;
-    height: 100%;   
+    height: 100%; 
     object-fit: fill;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
