@@ -9,17 +9,6 @@ body{
     background-color: #EBFAFF;
 }
 
-.conditions, .inputContainer{
-    margin: 5%;
-}
-
-.conditionsContainer{
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
 .logo{
     width: 280px;
     height: 48px;
@@ -50,14 +39,6 @@ body{
     display: flex;
     flex-direction:row;
     background-color: #FFFFFF;
-}
-
-.wattsCalculationInput, .phInput, .ghInput, .luminosityInput, .litersInput, .waterTypeContainer, .plantedContainer, .temperatureContainer{
-    margin-left: 2%;
-}
-
-.parameterDiv{
-    margin-top: 2%;
 }
 
 .luminosityDiv, .luminosityDiv2{
@@ -95,7 +76,6 @@ h2{
 
 .expand {
     width: fit-content;
-    margin-top: 2%;
     background-color: #FFFFFF;
     border: 2px solid #B7E2F0;
     border-radius: 30px;
@@ -134,7 +114,6 @@ h2{
 }
 
 .wattsCalculation{
-    margin: 2%;
     background-color: #FFFFFF;
     display: flex;
     justify-content: space-around;
@@ -147,7 +126,6 @@ h2{
 
 .calculate{
     background-color: #FFFFFF;
-    margin-left: 5%;
     display: inherit;
     align-content: center;
 }
@@ -187,10 +165,14 @@ h2{
 
 .swiperImg, .modalImg{
     width: 100%;
-    height: 100%; 
-    object-fit: fill;
+    height: 300px;
+    object-fit: cover;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+}
+
+.modalImg{
+    height: 100%; 
 }
 
 .modalImg{
@@ -220,14 +202,6 @@ h2{
         flex-direction: column;
     }
 
-    .parameterDiv input, .parameterDiv1 input{
-        margin-left: 5%;
-    }
-
-    .inputContainer{
-        margin: 0%;
-    }
-
     .temperatureType{
         display: none;
     }
@@ -242,13 +216,9 @@ h2{
 }
 
 @media only screen and (max-width: 850px){
-    .wattsCalculation, .buttonsContainer{
+    .wattsCalculation{
         display: flex;
         flex-direction: column;
-    }
-
-    .wattsCalculation {
-        margin: 4%;
     }
 
     .buttonsContainer {
@@ -257,12 +227,6 @@ h2{
 
     .screenRight{
         height: auto;
-    }
-
-    .conditionsContainer{
-        margin-left: 4%;
-        margin-right: 4%;
-        margin-top: 4%;
     }
 
     .temperatureType{
@@ -275,31 +239,16 @@ h2{
         display: flex;
     }
 
-    .calculate {
-        margin-left: 0% !important;
-    }
-
-    .parameterDiv input, .parameterDiv1 input{
-        margin-left: 0%;
-    }
-
     .temperatureType{
         display: none;
     }
 }
 
 @media only screen and (max-width: 500px){
-    .wattsCalculationInput {
-        margin-left: 0%;
-    }
 
-    .parameterDivPlanted{
+    .parameterDivPlanted, .temperatureType, .parameterDivWaterType{
         display: flex;
         flex-direction: column;
-    }
-
-    .conditions{
-        margin: 3%;
     }
 
     .temperatureType{
@@ -311,7 +260,6 @@ h2{
     h4{
         white-space: normal;
     }
-    
 }
 
 
