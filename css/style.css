@@ -68,6 +68,28 @@ h2{
     background-color: #FFFFFF;
 }
 
+section{
+    width: 90%;
+    height: 300px;
+}
+
+section img{
+    cursor: pointer;
+    width: 0px;
+    border: 2px solid #B7E2F0 ;
+    border-radius: 30px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+section img:hover{
+    width: 70%;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
 .parameterDiv button{
     border: 2px solid #B7E2F0;
     border-radius: 30px;
@@ -89,6 +111,7 @@ h2{
     border-radius: 30px;
     background-color: #FFFFFF;
 }
+
 
 .buttonIcon{
     color: #00A7DC;
@@ -219,10 +242,6 @@ h2{
     .wattsCalculation{
         display: flex;
         flex-direction: column;
-    }
-
-    .buttonsContainer {
-        margin-left: 4%;
     }
 
     .screenRight{
